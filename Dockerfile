@@ -4,6 +4,9 @@ FROM node:22-slim
 # Arbeitsverzeichnis
 WORKDIR /app
 
+# Um sicherzugehen, dass auch devDependencies installiert werden
+ENV NODE_ENV=development
+
 # package.json & package-lock.json kopieren
 COPY package*.json ./
 
