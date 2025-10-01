@@ -1,0 +1,8 @@
+services:
+  agent:
+    build: .
+    container_name: woche1-agent
+    env_file: .env
+    volumes:
+      - .:/app
+    command: npm run dev
