@@ -25,7 +25,7 @@ export async function getWeather(params: WeatherParams): Promise<WeatherResult> 
     throw new Error(`API-Fehler: ${resp.statusText}`);
   }
 
-  const data = await resp.json();
+  const data: any = await resp.json();
 
   return {
     city: data.name,

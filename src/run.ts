@@ -1,6 +1,6 @@
 import "dotenv/config";
 import OpenAI from "openai";
-import { getWeather } from "./weatherTool.ts";
+import { getWeather } from "./weatherTool.js";
 
 const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 const model = process.env.MODEL || "gpt-4o-mini";
@@ -53,7 +53,7 @@ async function main() {
     });
 
     console.log("\n--- Antwort des Agents ---\n");
-    console.log(second.choices[0].message!.content ?? "Keine Antwort");
+    console.log(second.choices[0].message?.content ?? "Keine Antwort");
   } else {
     console.log("\n--- Antwort des Agents ---\n");
     console.log(msg.content ?? "Keine Antwort");
